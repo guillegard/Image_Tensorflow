@@ -133,6 +133,13 @@ if __name__ == "__main__":
 
   #print('\nEvaluation time (1-image): {:.3f}s\n'.format(end-start))
   template = "{} (score={:0.5f})"
+  print("=")
   for i in top_k:
-    print(template.format(labels[i], results[i]))
-    break
+    #print(results[i])
+    if results[i] > 0.85:
+      #print(template.format(labels[i], results[i]))
+      print(labels[i])
+      break
+    else:
+      print("no match")
+      break

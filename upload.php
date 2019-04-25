@@ -7,7 +7,7 @@
 	if(isset($_POST["submit"])) {
 		$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
 		if($check !== false) {
-			echo "File is an image - " . $check["mime"] . ".";
+			#echo "File is an image - " . $check["mime"] . ".";
 			$uploadOk = 1;
 		} else {
 			echo "File is not an image.";
@@ -36,15 +36,15 @@
 	// if everything is ok, try to upload file
 	} else {
 		if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-			echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+			#echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+			$image = 'img/'.basename( $_FILES["fileToUpload"]["name"]);
+			$command = escapeshellcmd('env/bin/python -m scripts.label_image --image='.$image);
+			$output = shell_exec($command." 2>&1");
+			$output = explode("=", $output);
+			echo $output[1];
+			unlink($image) or die("Couldn't delete file");
 		} else {
 			echo "Sorry, there was an error uploading your file.";
 		}
 	}
-    
-    $image = 'tf_files/flower_photos/orquidia/orquidia2.jpeg';
-    $command = escapeshellcmd('sudo -S python -m scripts.label_image --image='.$image);
-	$output = shell_exec('sudo -S python -m scripts.label_image --image='.$image);
-	shell_exec('whoami');
-	echo $output;
 ?>
