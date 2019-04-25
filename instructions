@@ -1,0 +1,22 @@
+Instrucciones:
+
+INSTALAR:
+    instalas pip
+    instalar python
+    instalar git
+    instalar php
+    instalar apache
+
+PERMISOS:
+    subida de imagenes:
+        sudo usermod -a -G www-data <some_user>
+        sudo chgrp -R www-data /var/www
+        sudo chmod -R g+w /var/www
+        sudo find /var/www -type d -exec chmod 2775 {} \;    
+        sudo find /var/www -type f -exec chmod ug+rw {} \;
+    
+    acceso a cmd para exec:
+
+EXTRA:
+    copiar folders en linux
+    cp -avr /home/vivek/letters /usb/backup
