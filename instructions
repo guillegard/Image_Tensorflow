@@ -18,13 +18,16 @@ PERMISOS:
 EXEC PHP:
     poder ejecutar python con dependencias:
         crear entorno virtual dentro de la carpeta
-        cd /path/to/project             # go to your project dir
-        virtualenv -p python3 env       # create python3-based virtual environment
-        . env/bin/activate              # activate the virtual environment in env/
-        pip install numpy               # install all dependencies
-        deactivate                      # deactivate env
+            cd /path/to/project             # go to your project dir
+            virtualenv -p python3 env       # create python3-based virtual environment
+            . env/bin/activate              # activate the virtual environment in env/
+            pip install numpy               # install all dependencies
+            deactivate                      # deactivate env
     ejecutar desde php con
         exec("/path/to/project/env/bin/python test_python.py 2>&1");
+
+RUN UPLOAD FROM OTHER TERMINAL
+    curl -F "fileToUpload=@/home/guillermo/Desktop/o.jpeg" http://10.0.2.15/tensorflow-for-poets-2/upload.php
 
 EXTRA:
     copiar folders en linux
