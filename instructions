@@ -22,6 +22,7 @@ EXEC PHP:
             virtualenv -p python3 env       # create python3-based virtual environment
             . env/bin/activate              # activate the virtual environment in env/
             pip install numpy               # install all dependencies
+            pip install --upgrade "tensorflow==1.7.*" # install tensorflow
             deactivate                      # deactivate env
     ejecutar desde php con
         exec("/path/to/project/env/bin/python test_python.py 2>&1");
