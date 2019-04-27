@@ -27,7 +27,12 @@ EXEC PHP:
         exec("/path/to/project/env/bin/python test_python.py 2>&1");
 
 RUN UPLOAD FROM OTHER TERMINAL
-    curl -F "fileToUpload=@/home/guillermo/Desktop/o.jpeg" http://10.0.2.15/tensorflow-for-poets-2/upload.php
+    requiere
+        curl
+    ejecutar
+        curl -F "fileToUpload=@/home/guillermo/Desktop/o.jpeg" http://10.0.2.15/tensorflow-for-poets-2/upload.php
+    recomendacion
+        ejecutar el comando desde el python que toma la imagen.
 
 EXTRA:
     copiar folders en linux
