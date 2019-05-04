@@ -43,7 +43,7 @@
 			$output = shell_exec($command." 2>&1");
 			$output = explode("=", $output);
 			echo $output[1];
-			#unlink($image) or die("Couldn't delete file");
+			unlink($image) or die("Couldn't delete file");
 		} else {
 			echo "Sorry, there was an error uploading your file.";
 		}
