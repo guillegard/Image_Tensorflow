@@ -6,6 +6,7 @@ INSTALAR:
     instalar git
     instalar php
     instalar apache
+        https://hostadvice.com/how-to/how-to-install-apache-mysql-php-on-an-ubuntu-18-04-vps/
 
 PERMISOS:
     subida de imagenes:
@@ -38,3 +39,7 @@ RUN UPLOAD FROM OTHER TERMINAL
 EXTRA:
     copiar folders en linux
     cp -avr /home/vivek/letters /usb/backup
+
+Cuenta google:
+    tellme.itesm@gmail.com  
+    tellmeproject2019
