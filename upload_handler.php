@@ -1,4 +1,7 @@
 <?php
+  require_once 'google/appengine/api/cloud_storage/CloudStorageTools.php';
+  use google\appengine\api\cloud_storage\CloudStorageTools;
+  
   $gs_name = $_FILES["fileToUpload"]["tmp_name"]; 
   $fileType = $_FILES["fileToUpload"]["type"]; 
   $fileSize = $_FILES["fileToUpload"]["size"]; 
