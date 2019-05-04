@@ -1,13 +1,12 @@
+<?
+require_once 'google/appengine/api/cloud_storage/CloudStorageTools.php';
+use google\appengine\api\cloud_storage\CloudStorageTools;
+$options = [ 'img-tellme' => 'yourbucketname' ];
+$upload_url = CloudStorageTools::createUploadUrl('/upload_handler.php', $options);
 
-<!DOCTYPE html>
-<html>
-<body>
-
-<form action="upload.php" method="post" enctype="multipart/form-data">
-    Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
-</form>
-
-</body>
-</html>
+?>
+<form action="<?php echo $upload_url?>" enctype="multipart/form-data" method="post">
+    Files to upload: <br>
+   <input type="file" name="userfile" size="40">
+   <input type="submit" value="Send">
+</form> 
