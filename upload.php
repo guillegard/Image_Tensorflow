@@ -38,11 +38,12 @@
 		if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 			echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
 			$image = 'img/'.basename( $_FILES["fileToUpload"]["name"]);
-			$command = escapeshellcmd('sudo env/bin/python -m scripts.label_image --image='.$image);
+			$command = escapeshellcmd('env/bin/python -m scripts.label_image --image='.$image);
 			#echo $command;
 			$output = shell_exec($command." 2>&1");
 			$output = explode("=", $output);
 			echo $output[1];
+			echo shell_exec("ls");
 			unlink($image) or die("Couldn't delete file");
 		} else {
 			echo "Sorry, there was an error uploading your file.";
