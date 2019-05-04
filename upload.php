@@ -38,10 +38,8 @@
 		if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 			echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
 			$image = 'img/'.basename( $_FILES["fileToUpload"]["name"]);
-			$command = escapeshellcmd('env/bin/python -m scripts.label_image --image='.$image);
+			$command = escapeshellcmd('python -m scripts.label_image --image='.$image);
 			#echo $command;
-			$output = shell_exec($command." 2>&1");
-			echo $output;
 			$output = shell_exec($command);
 			echo $output;
 			#$output = explode("=", $output);
