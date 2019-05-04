@@ -41,9 +41,9 @@
 			$command = escapeshellcmd('env/bin/python -m scripts.label_image --image='.$image);
 			#echo $command;
 			$output = shell_exec($command." 2>&1");
-			echo $output
+			echo $output;
 			$output = shell_exec($command);
-			echo $output
+			echo $output;
 			#$output = explode("=", $output);
 			#echo $output[1];
 			unlink($image) or die("Couldn't delete file");
