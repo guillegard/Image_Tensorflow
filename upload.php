@@ -39,6 +39,7 @@
 			echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
 			$image = 'img/'.basename( $_FILES["fileToUpload"]["name"]);
 			$command = escapeshellcmd('env/bin/python -m scripts.label_image --image='.$image);
+			echo $command;
 			$output = shell_exec($command." 2>&1");
 			$output = explode("=", $output);
 			echo $output[1];
