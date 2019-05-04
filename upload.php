@@ -41,9 +41,9 @@
 			$command = escapeshellcmd('python -m scripts.label_image --image='.$image);
 			#echo $command;
 			$output = shell_exec($command);
-			echo $output;
-			#$output = explode("=", $output);
-			#echo $output[1];
+			#echo $output;
+			$output = explode("=", $output);
+			echo $output[1];
 			unlink($image) or die("Couldn't delete file");
 		} else {
 			echo "Sorry, there was an error uploading your file.";
