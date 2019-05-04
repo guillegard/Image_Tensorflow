@@ -132,11 +132,11 @@ if __name__ == "__main__":
   labels = load_labels(label_file)
 
   #print('\nEvaluation time (1-image): {:.3f}s\n'.format(end-start))
-  template = "{} (score={:0.5f})"
+  template = "{} (score:{:0.5f})"
   print("=")
   for i in top_k:
     #print(results[i])
-    if results[i] > 0.85:
+    if results[i] > 0.70:
       #print(template.format(labels[i], results[i]))
       print(labels[i])
       break
